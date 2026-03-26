@@ -1,0 +1,56 @@
+{
+  "_comment": "Sample prompt log from an audit of https://example.com. API key redacted.",
+
+  "model": "llama-3.3-70b-versatile",
+  "url_audited": "https://example.com",
+  "input_tokens_estimate": 612,
+
+  "system_prompt": "You are an expert SEO and UX analyst for a high-performing web agency.\nYour job is to audit webpages and provide specific, actionable insights grounded in real data.\n\nCRITICAL RULES:\n- Every insight MUST reference specific numbers from the provided metrics\n- Never give generic advice — tie everything to the actual data\n- Be direct and specific, like a senior consultant giving a client brief\n- Do NOT invent metrics or hallucinate data\n\nYou MUST respond with ONLY valid JSON in this exact structure (no markdown, no preamble):\n{\n  \"seoAnalysis\": \"string\",\n  \"messagingClarity\": \"string\",\n  \"ctaAnalysis\": \"string\",\n  \"contentDepth\": \"string\",\n  \"uxConcerns\": \"string\",\n  \"recommendations\": [\n    {\n      \"priority\": 1,\n      \"title\": \"string\",\n      \"reasoning\": \"string\",\n      \"action\": \"string\"\n    }\n  ]\n}\n\nProvide 3-5 recommendations ordered by priority (1 = highest impact).",
+
+  "user_prompt": "Audit this webpage: https://example.com\n\n=== EXTRACTED METRICS (factual, use these as the basis for your analysis) ===\n- Word Count: 218\n- H1 Tags: 1\n- H2 Tags: 0\n- H3 Tags: 0\n- CTAs (buttons/primary links): 1 (samples: More information...)\n- Internal Links: 1\n- External Links: 2\n- Images: 0\n- Images Missing Alt Text: 0 (0.0%)\n- Meta Title: Example Domain\n- Meta Description: MISSING\n- Page Load Time: 312ms\n\n=== PAGE CONTENT SNIPPET (first 3000 chars of visible text) ===\nExample Domain\nThis domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.\nMore information...\n\nProvide a structured JSON audit report following the system prompt schema.",
+
+  "input_data": {
+    "wordCount": 218,
+    "h1Count": 1,
+    "h2Count": 0,
+    "h3Count": 0,
+    "ctaCount": 1,
+    "ctaSamples": ["More information..."],
+    "internalLinks": 1,
+    "externalLinks": 2,
+    "imageCount": 0,
+    "missingAltCount": 0,
+    "missingAltPercent": 0.0,
+    "metaTitle": "Example Domain",
+    "metaDescription": null,
+    "pageLoadMs": 312
+  },
+
+  "raw_output": {
+    "seoAnalysis": "The page has a single H1 tag ('Example Domain') which is correct SEO practice, but the complete absence of a meta description is a significant gap. With only 218 words and no H2 or H3 tags, the page has no heading hierarchy, limiting keyword targeting and content scannability for crawlers.",
+    "messagingClarity": "The primary message is clear in its brevity. However, with 218 words and a single CTA ('More information...'), there is no value proposition, no audience targeting, and no persuasive structure.",
+    "ctaAnalysis": "Only 1 CTA detected: 'More information...' — a vague, low-intent label. With 1 internal link and 2 external links on a 218-word page, the page offers minimal navigation options.",
+    "contentDepth": "At 218 words with no H2 or H3 sub-sections, this page has extremely shallow content depth. Pages under 300 words are typically considered thin content by SEO standards.",
+    "uxConcerns": "The page has 0 images, limiting visual engagement. The absence of a meta description means the SERP preview will be unpredictable. With only 1 CTA and 218 words, a real user would have no clear next action.",
+    "recommendations": [
+      {
+        "priority": 1,
+        "title": "Add a meta description",
+        "reasoning": "Meta description is currently MISSING. This directly reduces click-through rates from search results.",
+        "action": "Write a 150-160 character meta description that summarises the page purpose and includes a primary keyword."
+      },
+      {
+        "priority": 2,
+        "title": "Expand content depth past 300 words",
+        "reasoning": "At 218 words with zero H2/H3 tags, this page is classified as thin content by SEO standards.",
+        "action": "Add at least 2 H2 sections with supporting paragraph content targeting relevant keywords."
+      },
+      {
+        "priority": 3,
+        "title": "Replace vague CTA with a specific action",
+        "reasoning": "The single CTA 'More information...' is low-intent. 1 CTA on 218 words is insufficient for conversion.",
+        "action": "Replace with a specific, benefit-driven CTA such as 'View Full Documentation'."
+      }
+    ]
+  }
+}
