@@ -1,0 +1,16 @@
+com\audittool\model\AIResponse$Recommendation.class
+com\audittool\controller\AuditController.class
+com\audittool\service\ScraperService.class
+com\audittool\AuditToolApplication.class
+com\audittool\model\AuditRequest.class
+com\audittool\service\AIService$1$1.class
+com\audittool\model\PromptLog.class
+com\audittool\service\AIService.class
+com\audittool\service\MetricsService.class
+com\audittool\service\AIService$1$2.class
+com\audittool\service\AIService$1.class
+com\audittool\config\CorsConfig.class
+com\audittool\model\MetricsResponse.class
+com\audittool\service\AIService$AIServiceResult.class
+com\audittool\model\AIResponse.class
+com\audittool\model\AuditResponse.class
