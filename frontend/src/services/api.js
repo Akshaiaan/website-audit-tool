@@ -1,4 +1,4 @@
-const BASE_URL = '';
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://website-audit-tool-production-f1db.up.railway.app';
 
 export const auditWebsite = async (url) => {
   const response = await fetch(`${BASE_URL}/api/audit`, {
